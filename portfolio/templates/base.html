@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{{ personal_info.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img
+          src="{{ personal_info.image.url }}"
+          alt="{{ personal_info.name }}"
+          class="profile-image"
+        />
+      </div>
+      <h1 class="profile-name">{{ personal_info.name }}</h1>
+      <nav>
+        <div class="nav-links-container">
+          <span class="nav-link"><a href="{% url 'home' %}">Home</a></span>
+          <span class="nav-link"><a href="{% url 'resume' %}">Resume</a></span>
+          <span class="nav-link"
+            ><a href="{% url 'projects' %}">Projects</a></span
+          >
+          <span class="nav-link"><a href="{% url 'videos' %}">Videos</a></span>
+        </div>
+      </nav>
+      <div class="content">{% block content %}{% endblock %}</div>
+    </div>
+  </body>
+</html>

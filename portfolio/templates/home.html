@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- <h2>Home</h2> -->
+{% for content in home_content %}
+<h2>{{ content.title }}</h2>
+<p class="py-2">{{ content.paragraph|safe }}</p>
+
+{% endfor %}
+
+<!-- <div id="inbox">
+  <div id="inboxcontant">
+    <h4>Contact</h4>
+    <button>Submit</button>
+  </div>
+</div> -->
+<div id="links">
+  <div class="link-title">Links</div>
+  <ul>
+    <li><a href="{{ personal_info.email }}">Email</a></li>
+    <li><a href="{{ personal_info.github_link }}">GitHub</a></li>
+    <li><a href="{{ personal_info.linkedin_link }}">LinkedIn</a></li>
+    <li><a href="{{ personal_info.substack_link }}">Substack</a></li>
+    <li><a href="{{ personal_info.youtube_link }}">YouTube</a></li>
+</ul>
+</div>
+{% endblock %}

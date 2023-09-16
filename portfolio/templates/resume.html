@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {% if resume %}
+<iframe
+  src="{{ resume.document.url }}"
+  style="width: 100%; height: 100vh"
+></iframe>
+<a href="{{ resume.document.url }}" download
+  ><button id="downloadbut">Download Resume</button></a
+>
+{% else %}
+<p>No resume document available.</p>
+{% endif %} {% endblock %}

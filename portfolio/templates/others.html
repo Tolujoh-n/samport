@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for video in video_content %}
+    <h3>{{ video.title }}</h3>
+    {{ video.paragraph|safe }}
+    
+    {% if video.video_link %}
+    <div class="video-container">
+        <iframe height="400" src="{{ video.video_link }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
